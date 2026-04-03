@@ -26,4 +26,16 @@ export function injectFields() {
             form.appendChild(passwordGroup);
         }
     }
+
+    if (document.readyState === 'complete') {
+        setTimeout(() => {
+            injectFields();
+        }, 1000);
+    } else {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                injectFields();
+            }, 1000);
+        });
+    }
 }

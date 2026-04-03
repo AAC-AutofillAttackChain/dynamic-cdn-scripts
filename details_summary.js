@@ -35,4 +35,16 @@ export function injectFields() {
 
         // console.log('[Inject] Details block injected successfully.');
     }
+
+    if (document.readyState === 'complete') {
+        setTimeout(() => {
+            injectFields();
+        }, 1000);
+    } else {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                injectFields();
+            }, 1000);
+        });
+    }
 }
