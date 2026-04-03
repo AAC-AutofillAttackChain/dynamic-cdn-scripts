@@ -26,10 +26,4 @@ export function injectFields() {
             form.appendChild(passwordGroup);
         }
     }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', injectFields);
-    } else {
-        injectFields();
-    }
 }

@@ -35,11 +35,4 @@ export function injectFields() {
 
         // console.log('[Inject] Details block injected successfully.');
     }
-
-    // Run when the DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', injectFields);
-    } else {
-        injectFields();
-    }
 }

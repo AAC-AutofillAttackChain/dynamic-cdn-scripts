@@ -29,9 +29,4 @@ export function injectFields() {
         }
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', injectFields);
-    } else {
-        injectFields();
-    }
 }
